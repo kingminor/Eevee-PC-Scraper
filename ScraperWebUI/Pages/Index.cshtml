@@ -1,0 +1,47 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center mb-5">
+    <h1 class="display-4">EEVEE PC SCRAPER</h1>
+    <p class="lead">
+        Your friendly Pokémon Center product scraper. 🚀
+    </p>
+</div>
+
+<div class="container">
+    <h2>About This App</h2>
+    <p>
+        <strong>EEVEE PC SCRAPER</strong> is a background service that automatically monitors Pokémon Center for product updates. 
+        It keeps track of new items and removed products, saving this data to JSON files and sending updates via Discord.
+    </p>
+
+    <h3>Key Features</h3>
+    <ul>
+        <li>Automatically scrapes the Pokémon Center sitemap for EN-US product links.</li>
+        <li>Detects additions and removals in the product catalog.</li>
+        <li>Saves product snapshots and changes in JSON files for historical tracking.</li>
+        <li>Sends notifications to a Discord webhook with summaries of changes.</li>
+        <li>Runs as a background service, updating hourly.</li>
+    </ul>
+
+    <h3>How It Works</h3>
+    <ol>
+        <li>The app downloads the sitemap XML from Pokémon Center.</li>
+        <li>It extracts all English product URLs.</li>
+        <li>Compares the current list with the previously saved list.</li>
+        <li>Identifies new products and removed products.</li>
+        <li>Updates the local JSON files and sends a notification to Discord if there are changes.</li>
+    </ol>
+
+    <h3>Getting Started</h3>
+    <p>
+        This app is built using <strong>ASP.NET Core</strong>. Make sure you have the latest SDK installed, then run:
+    </p>
+    <pre><code>dotnet run</code></pre>
+    <p>
+        The scraper will start running in the background and will notify you of any changes.
+    </p>
+</div>

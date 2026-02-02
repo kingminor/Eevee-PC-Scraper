@@ -1,0 +1,78 @@
+## ===============================
+## Global .NET / C# Ignore Rules
+## ===============================
+
+# Build directories
+[Bb]in/
+[Oo]bj/
+[Rr]elease/
+[Dd]ebug/
+[Rr]eleases/
+artifacts/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# VS Code / JetBrains IDEs
+.vscode/
+.idea/
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+*.pidb
+*.svclog
+
+# ASP.NET / Web
+ScaffoldingReadMe.txt
+*.publishsettings
+*.publishproj
+*.dbmdl
+
+# NuGet packages
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+packages/
+*.nuspec
+
+# Testing / Coverage
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+CodeCoverage/
+
+# MSBuild
+*.binlog
+[Bb]uild[Ll]og.*
+
+# Temporary / swap files
+~$*
+*~
+
+# App settings & secrets
+# Ignore all appsettings.json by default
+appsettings*.json
+# But allow other appsettings files if needed, e.g. appsettings.Development.json
+!appsettings.Development.json
+
+## ===============================
+## Specific for your solution
+## ===============================
+
+# Ignore files in both subprojects
+PokemonCenterScraper/**/bin/
+PokemonCenterScraper/**/obj/
+ScraperWebUI/**/bin/
+ScraperWebUI/**/obj/
+
+# Explicitly ignore ScraperWebUI's appsettings.json
+ScraperWebUI/appsettings.json

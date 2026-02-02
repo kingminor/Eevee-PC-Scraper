@@ -1,0 +1,40 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+<div class="container mt-4">
+    <h1>@ViewData["Title"]</h1>
+
+    <p>Your privacy is important to us. This page explains what information <strong>EEVEE PC SCRAPER</strong> collects and how it is used.</p>
+
+    <h2>Information We Collect</h2>
+    <ul>
+        <li><strong>Product URLs:</strong> The app downloads publicly available product URLs from the Pokémon Center sitemap. This data is used to track changes in products over time.</li>
+        <li><strong>Change History:</strong> The app records which products were added or removed in JSON files. No personal information is collected.</li>
+        <li><strong>Discord Notifications:</strong> The app sends product change summaries to a Discord webhook. Only URLs of products are sent; no personal data is transmitted.</li>
+    </ul>
+
+    <h2>How We Use This Information</h2>
+    <ul>
+        <li>To track additions and removals of products at Pokémon Center.</li>
+        <li>To notify you via Discord about changes in the product catalog.</li>
+        <li>To maintain a local history of product changes for reference.</li>
+    </ul>
+
+    <h2>Data Sharing</h2>
+    <p>
+        We do not share your personal information with third parties. Only product information is shared to the Discord webhook you configure.
+    </p>
+
+    <h2>Cookies and Tracking</h2>
+    <p>
+        This application does not use cookies or other tracking technologies.
+    </p>
+
+    <h2>Contact Us</h2>
+    <p>
+        If you have any questions about this privacy policy, you can contact the developer at <strong>eevee-pc-scraper@example.com</strong>.
+    </p>
+</div>

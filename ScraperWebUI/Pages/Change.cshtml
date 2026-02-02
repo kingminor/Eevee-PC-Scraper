@@ -1,0 +1,59 @@
+@page "/change/{id?}"
+@model ChangeModel
+@{
+    ViewData["Title"] = "Change";
+}
+
+@functions {
+    string FormatProductName(string url)
+    {
+        // Get the last segment of the URL
+        var lastSegment = url.Split('/').Last();
+
+        // Replace dashes with spaces
+        lastSegment = lastSegment.Replace("-", " ");
+
+        // Special replacements
+        lastSegment = lastSegment.Replace("tcg", "TCG", StringComparison.OrdinalIgnoreCase);
+        lastSegment = lastSegment.Replace("pokemon", "Pokémon", StringComparison.OrdinalIgnoreCase);
+
+        // Capitalize other words
+        var textInfo = System.Globalization.CultureInfo.CurrentCulture.TextInfo;
+        lastSegment = textInfo.ToTitleCase(lastSegment);
+
+        return lastSegment;
+    }
+}
+
+
+<h1>Product Change</h1>
+
+@if (Model.Change == null)
+{
+    <p>No change found.</p>
+}
+else
+{
+    <p><strong>Timestamp:</strong> @Model.Change.Timestamp</p>
+
+    <h2>Added Products (@Model.Change.Added.Count)</h2>
+    <ul>
+        @foreach (var product in Model.Change.Added)
+        {
+            <li>
+                <a href="@product" target="_blank">@FormatProductName(product)</a>
+            </li>
+        }
+    </ul>
+
+
+    <h2>Removed Products (@Model.Change.Removed.Count)</h2>
+    <ul>
+        @foreach (var product in Model.Change.Removed)
+        {
+            <li>
+                <a href="@product" target="_blank">@FormatProductName(product)</a>
+            </li>
+        }
+    </ul>
+}

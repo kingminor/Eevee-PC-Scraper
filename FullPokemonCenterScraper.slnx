@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="PokemonCenterScraper/PokemonCenterScraper.csproj" />
+  <Project Path="ScraperWebUI/ScraperWebUI.csproj" />
+</Solution>

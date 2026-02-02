@@ -1,0 +1,24 @@
+@page "/changes"
+@model ChangesIndexModel
+@{
+    ViewData["Title"] = "Changes";
+}
+
+<h1>All Changes</h1>
+
+@if (Model.Changes == null || !Model.Changes.Any())
+{
+    <p>No change history available.</p>
+}
+else
+{
+    <ul>
+        @foreach (var change in Model.Changes)
+        {
+            <li>
+                <a href="/change/@change.Id">@change.Timestamp</a> 
+                (+@change.Added.Count, -@change.Removed.Count)
+            </li>
+        }
+    </ul>
+}
