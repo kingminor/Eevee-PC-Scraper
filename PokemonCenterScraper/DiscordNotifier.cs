@@ -4,10 +4,12 @@ public class DiscordNotifier
 {
     private readonly HttpClient _httpClient = new();
     private readonly string _webhookUrl;
+    private readonly string _publicURL;
 
-    public DiscordNotifier(string webhookUrl)
+    public DiscordNotifier(string webhookUrl, string publicURL)
     {
         _webhookUrl = webhookUrl;
+        _publicURL = publicURL;
     }
 
     public async Task SendCombinedChangesAsync(
@@ -22,7 +24,7 @@ public class DiscordNotifier
         var lines = new List<string>();
 
         // Top link to view all changes
-        lines.Add($"[🔗 View all changes](http://localhost:5196/change/{changeId})\n");
+        lines.Add($"[🔗 View all changes](http://{_publicURL}/change/{changeId})\n");
 
         // Added products
         if (added.Any())

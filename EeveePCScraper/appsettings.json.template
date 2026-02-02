@@ -7,6 +7,7 @@
   },
   "AllowedHosts": "*",
   "Discord" : {
-          "Webhook": "PUT YOUR WEBHOOK URL HERE"
+          "WebhookURL": "PUT YOUR WEBHOOK URL HERE",
+          "HostURL": "The URL you used for the WEBUI"
   }
 }

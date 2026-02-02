@@ -14,6 +14,7 @@ public class Worker : BackgroundService
     private const string SaveFile = "products.json";
     private const string ChangesFile = "changes.json";
     private readonly string DiscordWebhookUrl;
+    private readonly string PublicURL;
     public Worker(ILogger<Worker> logger, IConfiguration configuration)
     {
         _logger = logger;
@@ -24,8 +25,9 @@ public class Worker : BackgroundService
         };
 
         DiscordWebhookUrl = configuration["Discord:WebhookUrl"];
+        PublicURL = configuration["Discord:HostURL"];
 
-        _discordNotifier = new DiscordNotifier(DiscordWebhookUrl);
+        _discordNotifier = new DiscordNotifier(DiscordWebhookUrl, PublicURL);
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
