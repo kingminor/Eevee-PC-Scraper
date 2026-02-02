@@ -26,7 +26,7 @@ EEVEE PC Scraper is a background service that automatically monitors Pokémon Ce
 
 1. Clone the repository:
    
-   `git clone <repository-url>`
+   `git clone https://github.com/kingminor/Eevee-PC-Scraper.git`
    
    and
    
